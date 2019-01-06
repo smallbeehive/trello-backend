@@ -1,6 +1,8 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
+from rest_framework.response import Response
 
+from lists.serializers import ListSerializer
 from users.serializers import UserSerializer
 from .models import Board
 
@@ -14,6 +16,7 @@ __all__ = (
 class BoardSerializer(serializers.ModelSerializer):
 
     user = UserSerializer(read_only=True)
+    lists = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = Board
@@ -22,6 +25,12 @@ class BoardSerializer(serializers.ModelSerializer):
             'title',
             'bgColor',
             'user',
+            'lists',
             'created_date',
             'modified_date',
         )
+
+    def get_lists(self, board):
+        lists = board.list_set.all()
+        serializers = ListSerializer(lists, many=True)
+        return serializers.data
