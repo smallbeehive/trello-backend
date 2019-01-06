@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     # Custom app
     'users',
     'boards',
+    'lists',
 ]
 
 MIDDLEWARE = [
