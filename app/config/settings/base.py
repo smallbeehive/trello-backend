@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     # Third party app
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
 
     # Custom app
     'users',
@@ -53,6 +54,13 @@ INSTALLED_APPS = [
     'lists',
     'cards',
 ]
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:8080',
+    'frontend.localhost:3000',
+    'ec2-54-180-156-11.ap-northeast-2.compute.amazonaws.com',
+    'todo.smallbee.me',
+)
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -62,6 +70,7 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
