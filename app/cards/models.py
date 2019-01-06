@@ -12,15 +12,17 @@ __all___ = (
 
 class Card(models.Model):
     title = models.CharField(
-        max_length=150,
         verbose_name="Card's title",
+        max_length=150,
     )
     description = models.TextField(
         verbose_name="Card's description",
     )
-    pos = models.PositiveIntegerField(
+    pos = models.DecimalField(
         verbose_name="Card's position data",
         default=65535,
+        decimal_places=7,
+        max_digits=15,
     )
     listId = models.ForeignKey(
         List,

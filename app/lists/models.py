@@ -12,12 +12,14 @@ __all___ = (
 
 class List(models.Model):
     title = models.CharField(
-        max_length=150,
         verbose_name="List's title",
+        max_length=150,
     )
-    pos = models.PositiveIntegerField(
+    pos = models.DecimalField(
         verbose_name="List's position data",
         default=65535,
+        decimal_places=7,
+        max_digits=15,
     )
     boardId = models.ForeignKey(
         Board,
