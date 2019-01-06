@@ -16,7 +16,7 @@ class Board(models.Model):
     bgColor = models.CharField(
         max_length=50,
         verbose_name="Board's background color",
-        blank=True,
+        default='rgb(0, 121, 191)',
     )
     user = models.ForeignKey(
         User,
