@@ -30,6 +30,11 @@ sentry_sdk.init(
     integrations=[DjangoIntegration()]
 )
 
+# Substituting a custom User model
+# https://docs.djangoproject.com/en/2.0/topics/auth/customizing/#substituting-a-custom-user-model
+AUTH_USER_MODEL = 'users.User'
+
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Custom app
+    'users',
 ]
 
 MIDDLEWARE = [
