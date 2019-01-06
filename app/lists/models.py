@@ -17,11 +17,11 @@ class List(models.Model):
     )
     pos = models.PositiveIntegerField(
         verbose_name="List's position data",
-        blank=True
+        default=65535,
     )
     boardId = models.ForeignKey(
         Board,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
     )
     created_date = models.DateField(
         verbose_name='Created date',
@@ -29,7 +29,7 @@ class List(models.Model):
     )
     modified_date = models.DateField(
         verbose_name='Modified date',
-        auto_now=True
+        auto_now=True,
     )
 
     def __str__(self):

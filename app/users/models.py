@@ -15,7 +15,7 @@ class User(AbstractUser):
     )
     modified_date = models.DateField(
         verbose_name='Modified date',
-        auto_now=True
+        auto_now=True,
     )
 
     def __str__(self):

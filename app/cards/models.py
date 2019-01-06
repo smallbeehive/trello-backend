@@ -1,26 +1,30 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 
+from lists.models import List
+
 User = get_user_model()
 
 __all___ = (
-    'Board',
+    'Card',
 )
 
 
-class Board(models.Model):
+class Card(models.Model):
     title = models.CharField(
         max_length=150,
-        verbose_name="Board's title",
+        verbose_name="Card's title",
     )
-    bgColor = models.CharField(
-        max_length=50,
-        verbose_name="Board's background color",
-        blank=True,
+    description = models.TextField(
+        verbose_name="Card's description",
     )
-    user = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE
+    pos = models.PositiveIntegerField(
+        verbose_name="Card's position data",
+        default=65535,
+    )
+    listId = models.ForeignKey(
+        List,
+        on_delete=models.CASCADE,
     )
     created_date = models.DateField(
         verbose_name='Created date',

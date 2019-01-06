@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'users',
     'boards',
     'lists',
+    'cards',
 ]
 
 MIDDLEWARE = [
