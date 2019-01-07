@@ -37,5 +37,8 @@ class Card(models.Model):
         auto_now=True,
     )
 
+    class Meta:
+        ordering = ['pos']
+
     def __str__(self):
         return f'{self.pk} {self.title}'
