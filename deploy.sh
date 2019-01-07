@@ -1,0 +1,1 @@
+git add -f .secrets && eb deploy --staged --profile=eb-trello; git reset HEAD .secrets
