@@ -17,6 +17,7 @@ class Card(models.Model):
     )
     description = models.TextField(
         verbose_name="Card's description",
+        blank=True
     )
     pos = models.DecimalField(
         verbose_name="Card's position data",
