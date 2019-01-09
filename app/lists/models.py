@@ -18,8 +18,8 @@ class List(models.Model):
     pos = models.DecimalField(
         verbose_name="List's position data",
         default=65535,
-        decimal_places=7,
-        max_digits=15,
+        decimal_places=17,
+        max_digits=30,
     )
     boardId = models.ForeignKey(
         Board,
