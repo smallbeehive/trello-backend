@@ -13,7 +13,7 @@ class Board(models.Model):
         verbose_name="Board's title",
         max_length=150,
     )
-    bgColor = models.CharField(
+    bg_color = models.CharField(
         verbose_name="Board's background color",
         max_length=50,
         default='rgb(0, 121, 191)',

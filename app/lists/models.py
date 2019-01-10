@@ -21,7 +21,7 @@ class List(models.Model):
         decimal_places=17,
         max_digits=30,
     )
-    boardId = models.ForeignKey(
+    board_id = models.ForeignKey(
         Board,
         on_delete=models.CASCADE,
     )

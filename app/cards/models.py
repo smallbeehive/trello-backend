@@ -25,7 +25,7 @@ class Card(models.Model):
         decimal_places=7,
         max_digits=15,
     )
-    listId = models.ForeignKey(
+    list_id = models.ForeignKey(
         List,
         on_delete=models.CASCADE,
     )
