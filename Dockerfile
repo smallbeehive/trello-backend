@@ -4,15 +4,15 @@ MAINTAINER  smallbee3@gmail.com
 ENV         BUILD_MODE  prod
 ENV         DJANGO_SETTINGS_MODULE  config.settings.${BUILD_MODE}
 
-# Frontend
-# 1) git clone
 WORKDIR     /srv
-RUN         rm -rf      /srv/frontend
-RUN         git clone https://github.com/smallbeehive/trello-frontend.git frontend
+RUN         rm -rf frontend
+RUN         mkdir frontend
+RUN         chmod 757 frontend
 WORKDIR     /srv/frontend
-# 2) git pull
-#WORKDIR    /srv/frontend
-#RUN        git pull origin master
+RUN         git init
+RUN         git remote add origin https://github.com/smallbeehive/trello-frontend.git
+RUN         git fetch origin
+RUN         git checkout --track origin/master
 
 RUN         npm install
 
