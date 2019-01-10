@@ -16,6 +16,7 @@ djangorestframework = "*"
 psycopg2-binary = "*"
 sentry-sdk = "*"
 uwsgi = "*"
+djangorestframework-camel-case = "*"
 
 [requires]
 python_version = "3.6"
