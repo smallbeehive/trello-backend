@@ -21,7 +21,7 @@ class ListSerializer(serializers.ModelSerializer):
             'id',
             'title',
             'pos',
-            'boardId',
+            'board_id',
             'cards',
             'created_date',
             'modified_date',

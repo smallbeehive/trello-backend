@@ -22,7 +22,7 @@ class BoardSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'title',
-            'bgColor',
+            'bg_color',
             'user',
             'lists',
             'created_date',
