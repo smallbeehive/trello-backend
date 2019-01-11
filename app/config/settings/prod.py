@@ -1,8 +1,16 @@
 import logging
+import platform
+import sys
 
 from .base import *
 
-DEBUG = True
+DEBUG = False or (
+        len(sys.argv) > 1
+        and sys.argv[1] == 'runserver'
+        and platform.system() != 'Linux'
+        # and sys.platform != 'linux'
+)
+
 ALLOWED_HOSTS = [
     'localhost',
     '.elasticbeanstalk.com',
