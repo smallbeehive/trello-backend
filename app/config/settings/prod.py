@@ -12,6 +12,7 @@ DEBUG = False or (
 )
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     'localhost',
     '.elasticbeanstalk.com',
     '.amazonaws.com',
@@ -56,10 +57,19 @@ LOGGING = {
             'format': '[%(levelname)s] %(name)s (%(asctime)s)\n\t%(message)s'
         },
     },
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
     'handlers': {
         'console': {
             'class': 'logging.StreamHandler',
             'level': 'INFO',
+            'filters': ['require_debug_true'],
             # It is called 'StreamHandler' because it doesn't make any fiels.
         },
         # 'file': {
@@ -100,6 +110,7 @@ LOGGING = {
                 'file_error',
             ],
             'level': 'INFO',
+            # 'level' defined in loggers preceeds other 'level' in handler
             'propagate': True,
         },
     },
