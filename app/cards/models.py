@@ -25,6 +25,12 @@ class Card(models.Model):
         decimal_places=7,
         max_digits=15,
     )
+    img_cover = models.ImageField(
+        verbose_name="Card's attached image",
+        upload_to="card",
+        blank=True,
+        default=""
+    )
     list_id = models.ForeignKey(
         List,
         on_delete=models.CASCADE,

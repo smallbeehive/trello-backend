@@ -17,6 +17,7 @@ psycopg2-binary = "*"
 sentry-sdk = "*"
 uwsgi = "*"
 djangorestframework-camel-case = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.7"
