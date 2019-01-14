@@ -19,7 +19,7 @@ class CardSerializer(serializers.ModelSerializer):
             'title',
             'description',
             'pos',
-            'img_cover',
+            'image',
             'list_id',
             'created_date',
             'modified_date',
