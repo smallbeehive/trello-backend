@@ -24,3 +24,12 @@ class CardSerializer(serializers.ModelSerializer):
             'created_date',
             'modified_date',
         )
+
+    # def update(self, instance, validated_data):
+    #     validated_data.pop('image', None)
+    #     request = self.context.get('request')
+    #     card = super().update(instance, validated_data)
+    #
+    #     if request.FILES:
+    #         card.image.save(request.FILES['image'].name, request.FILES['image'])
+    #     return card
