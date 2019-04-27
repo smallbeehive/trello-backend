@@ -59,7 +59,7 @@ CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
     'localhost:3000',
     'frontend.localhost:3000',
-    'ec2-54-180-156-11.ap-northeast-2.compute.amazonaws.com',
+    'ec2-52-79-158-77.ap-northeast-2.compute.amazonaws.com',
     'trello.smallbee.me',
 )
 
